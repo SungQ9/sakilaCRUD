@@ -13,5 +13,21 @@
         SELECT language_id, name, last_update
         FROM language;
     </select>
+	<insert id="addLanguage" parameterType="com.example.domain.Language">
+        INSERT INTO language (name, last_update)
+        VALUES (#{name},now());
+    </insert>
 
+    <update id="updateLanguage" parameterType="com.example.domain.Language">
+        UPDATE language
+        SET name = #{name}, last_update = now()
+        WHERE language_id = #{languageId};
+    </update>
+
+    <delete id="deleteLanguage" parameterType="int">
+        DELETE FROM language
+        WHERE language_id = #{languageId};
+    </delete>
+	
+	
 </mapper>

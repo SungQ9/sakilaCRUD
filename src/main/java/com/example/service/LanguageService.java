@@ -8,4 +8,10 @@ public interface LanguageService {
 
 	List<Language> getLanguageList();
 
+	void addLanguage(Language language);
+
+	void updateLanguage(Language language);
+
+	void deleteLanguage(int languageId);
+
 }
